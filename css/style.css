@@ -1,0 +1,214 @@
+
+/* CSS VERSION 1.0 © ALL RIGHTS @HULTECH */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+header,aside,main,footer{
+    display: block;
+    box-sizing: content-box;
+    width: 100%;
+}
+.content{
+    padding: 25px 100px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    background-color: lightblue;
+}
+.active{
+    border-bottom: 2px solid midnightblue;
+}
+h1,h2,h3,h4,h5,h6,li,i{
+    cursor: pointer;
+    text-transform: capitalize;
+}
+ol li,ul li{
+    list-style-type: none;
+}
+ol li{
+  display: inline-block;
+  text-align: center;
+}
+img{
+    width: 100%;
+}
+.profile_pic{
+    width: 50%;
+}
+input,textarea{
+    outline: none;
+    border: 1px solid midnightblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+button{
+    outline: none;
+    border: 1px solid midnightblue;
+    margin: 5px 0;
+    padding: 8px;
+    background-color: white;
+    color: midnightblue;
+    font-weight: bolder;
+    border-radius: 8px;
+}
+address{
+    padding: 10px;
+    font-weight: 200;
+}
+.breadcrumb{
+    padding: 20px;
+    background-color: azure;
+    color: midnightblue;
+}
+/* HEADER STYLINGS BEGINS*/
+header{
+    position: fixed;
+    background-color: white;
+    color: midnightblue;
+    box-shadow: 0 0 9px 3px rgba(41,41,41,.25);
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* search box */
+nav form{
+    width: 40%;
+}
+nav form input{
+    width: 100%;
+    border: 2px solid midnightblue;
+    border-radius: 20px;
+}
+/* search box ends */
+.top-nav-bar li{
+    padding: 0 10px;
+}
+nav .menuBtn{
+    display: none;
+}
+/* HEADER STYLINGS ENDS*/
+/* ASIDE STYLINGS BEGINS*/
+aside{
+    display: none;
+    position: fixed;
+    height: 100%;
+    background-color: white;
+    color: midnightblue;
+    z-index: 100;
+    overflow-y: scroll;
+}
+aside .menuBtn{
+    float: right;
+}
+.side-nav-bar li{
+    padding: 10px;
+}
+/* ASIDE STYLINGS ENDS*/
+/* MAIN STYLINGS BEGINS*/
+main{
+    margin-top: 70px;
+}
+section{
+    width: 100%;
+    padding: 20px 0;
+}
+.flex-block{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-block div{
+    width: 100%;
+    margin: 10px;
+}
+.vertical-align{
+    align-items: center;
+}
+.home{
+    text-align: center;
+}
+._title{
+    padding: 5px;
+    color: midnightblue;
+}
+.details{
+    padding: 8px;
+    color: gray;
+}
+.detail-default{
+    padding: 8px;
+}
+.post_card{
+    box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.22);
+}
+.post-title{
+    padding: 10px 25px;
+    font-weight: 300;
+    color: midnightblue;
+}
+.blogs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: auto;
+}
+.blog_post{
+    margin: 10px;
+    width: 30%;
+}
+/* MAIN STYLINGS ENDS*/
+
+/*FOOTER STYLINGS ENDS*/
+footer{
+    background-color: midnightblue;
+    color: white;
+}
+footer ._title,footer .details{
+    color: white;
+}
+footer ol li{
+    padding: 5px;
+}
+.copyright{
+    margin: 0;
+    padding-top: 30px;
+    background-color: white;
+    text-align: center;
+    color: midnightblue;
+    font-weight: bolder;
+}
+/* FOOTER STYLINGS ENDS*/
+
+/* styling for small screens */
+@media only screen and (max-width: 900px) {
+    .top-nav-bar{
+    display: none;
+    } 
+    nav .menuBtn{
+    display: block;
+    }
+    .content{
+       padding: 20px; 
+    }
+    .flex-block{
+        display: block;
+    }
+    .flex-block div{
+        margin: 20px 0;
+    }
+    .home{
+        text-align: left;
+    }
+    .about_us .details{
+    display: none;
+    }
+    .blog_post{
+        width: 100%;
+    }
+}
