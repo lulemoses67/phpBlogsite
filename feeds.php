@@ -2,7 +2,7 @@
 <?php
 //this is to show the active tab for now it's feeds page
     $home = false;
-    $feeds = "active";
+    $fds = "active";
     $about = false;
 ?>
 <?php 
@@ -25,7 +25,7 @@ $sql = "SELECT feed.title, feed.imgsrc, feed.details, Author.author_name, Feed_c
 $result = mysqli_query($conn,$sql);
 
 //fetch data as arrrays
-$x = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$feeds = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 //free results
 mysqli_free_result($result);
@@ -38,7 +38,18 @@ require('./templates/header.php');
 ?>
 <section>
     <h4 class="_title">Feeds</h4>
-    <?php print_r($x); ?>
+    <div>
+
+    <?php print_r($feeds); ?>
+    <?php foreach ($feeds as $feed) { ?>
+        
+            <div class="post_card">
+                <h1> <?php echo htmlspecialchars($feed['title']); ?> </h1>
+            </div>
+
+    <?php } ?>
+
+    </div>
 </section
 <?php
 require('./templates/footer.php');

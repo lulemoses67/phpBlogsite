@@ -2,7 +2,7 @@
 <?php
 //this is to show the active tab for now it's about us page
     $home = false;
-    $feeds = false;
+    $fds = false;
     $about = "active";
 ?>
 <?php
