@@ -5,15 +5,12 @@
     $fds = "active";
     $about = false;
 ?>
-<?php 
-// connect to databases
-$conn = mysqli_connect('localhost','moses','lastking7','hultech');
 
-if (!$conn) {
-	echo "connection error" . mysqli_connect_error();
-}
+<?php include('config/db.php'); ?>
+
+<?php 
 // write query for feeds
-$sql = "SELECT feed.title, feed.imgsrc, feed.details, Author.author_name, Feed_class.class_name, feed.create_at \n"
+$sql = "SELECT feed.feed_id, feed.title, feed.imgsrc, feed.details, Author.author_name, Feed_class.class_name, feed.create_at \n"
 
     . "    FROM feed JOIN Author JOIN Feed_class \n"
 
@@ -21,7 +18,7 @@ $sql = "SELECT feed.title, feed.imgsrc, feed.details, Author.author_name, Feed_c
 
     . "    Feed_class.feedClass_id ORDER BY feed.create_at;";
 
-//make aquery
+ //make aquery
 $result = mysqli_query($conn,$sql);
 
 //fetch data as arrrays
@@ -44,7 +41,10 @@ require('./templates/header.php');
     <?php foreach ($feeds as $feed) { ?>
         
             <div class="post_card">
+            <a href="details.php?feed_id=<?php echo $feed['feed_id'] ?>">
+                <img src="./images/<?php echo htmlspecialchars($feed['imgsrc']); ?> "/>
                 <h1> <?php echo htmlspecialchars($feed['title']); ?> </h1>
+            </a>
             </div>
 
     <?php } ?>
